@@ -12,19 +12,19 @@
 
 | Task ID | Role | Title | Status | Dependencies | Owner | Notes / Deliverables |
 | :--- | :--- | :--- | :---: | :--- | :--- | :--- |
-| `TASK-P4-001` | `P4` | Setup monorepo package structure & shared contracts | [x] | None | Infra Lead | `packages/shared/contracts/` initialized |
-| `TASK-P4-002` | `P4` | Create local Docker Compose orchestrator | [x] | `TASK-P4-001` | Infra Lead | `infra/docker-compose.yml` & `.env.example` |
-| `TASK-P4-003` | `P4` | Setup validation script (`verify-setup.sh`) | [x] | `TASK-P4-001` | Infra Lead | `./scripts/verify-setup.sh` executable |
-| `TASK-P1-001` | `P1` | Scaffold Frontend client application | [x] | `TASK-P4-001` | Frontend Lead | `apps/frontend/` initialized |
-| `TASK-P2-001` | `P2` | Scaffold Backend API server | [x] | `TASK-P4-001` | Backend Lead | `apps/backend/` initialized |
-| `TASK-P3-001` | `P3` | Scaffold AI Service & Agent Engine | [x] | `TASK-P4-001` | AI Lead | `apps/ai-service/` initialized |
-| `TASK-P5-001` | `P5` | Setup E2E Test harness & QA verification suite | [x] | `TASK-P1-001`, `TASK-P2-001` | QA Lead | `tests/` initialized |
+| `TASK-P1-001` | `P1` | Scaffold Frontend client application | [x] | `TASK-P4-001` | Rahul | `apps/frontend/` initialized |
+| `TASK-P2-001` | `P2` | Scaffold Backend API server | [x] | `TASK-P4-001` | Bhanu | `apps/backend/` initialized |
+| `TASK-P3-001` | `P3` | Scaffold AI Service & Agent Engine | [x] | `TASK-P4-001` | Kartik | `apps/ai-service/` initialized |
+| `TASK-P4-001` | `P4` | Setup monorepo package structure & shared contracts | [x] | None | Adarsh | `packages/shared/contracts/` initialized |
+| `TASK-P4-002` | `P4` | Create local Docker Compose orchestrator | [x] | `TASK-P4-001` | Adarsh | `infra/docker-compose.yml` & `.env.example` |
+| `TASK-P4-003` | `P4` | Setup validation script (`verify-setup.sh`) | [x] | `TASK-P4-001` | Adarsh | `./scripts/verify-setup.sh` executable |
+| `TASK-P5-001` | `P5` | Setup E2E Test harness & QA verification suite | [x] | `TASK-P1-001`, `TASK-P2-001` | Shivam | `tests/` initialized |
 
 ---
 
 ## Sprint 1: Data Unification & Opportunity Loss Detection Engine
 
-### P1: Frontend Team (`apps/frontend/`)
+### Rahul (P1): Frontend Team (`apps/frontend/`)
 - [ ] `TASK-P1-101`: Build Executive Leakage Dashboard & Revenue-at-Risk Cockpit
   - **Inputs:** `packages/shared/contracts/growth-engine.ts`, `docs/specs/ui/`
   - **Outputs:** `apps/frontend/src/features/dashboard/LeakageCockpit.js`
@@ -34,7 +34,7 @@
   - **Outputs:** `apps/frontend/src/features/field/BeatSheet.js`
   - **Validation:** Renders prioritized outlet visit cards with SKU pitch quantities and WhatsApp push trigger.
 
-### P2: Backend Team (`apps/backend/`)
+### Bhanu (P2): Backend Team (`apps/backend/`)
 - [ ] `TASK-P2-101`: Ingestion Pipeline & Relational Schema for 5 Core Datasets
   - **Inputs:** Retailer Master, SKU Master, Schemes & Promotions, DMS, Inventory, SFA logs
   - **Outputs:** `apps/backend/src/models/` and `apps/backend/src/services/ingestion.ts`
@@ -44,7 +44,7 @@
   - **Outputs:** `apps/backend/src/services/loss-engine.ts`, `apps/backend/src/routes/leakages.ts`
   - **Validation:** Detects Phantom Stockouts, Silent Churn, and Field Force Drain; computes `revenue_at_risk`.
 
-### P3: AI & Intelligence Team (`apps/ai-service/`)
+### Kartik (P3): AI & Intelligence Team (`apps/ai-service/`)
 - [ ] `TASK-P3-101`: Prescriptive Action Generation Pipeline (LLM Directive Layer)
   - **Inputs:** Deterministic JSON leakage payloads from Backend (`P2`)
   - **Outputs:** `apps/ai-service/src/agents/prescriptive-action.ts`
@@ -54,7 +54,7 @@
   - **Outputs:** `apps/ai-service/src/agents/scheme-optimizer.ts`
   - **Validation:** Matches churned retailers with high-margin promotional bundles to maximize win-back probability.
 
-### P4: DevOps & Shared Infra (`packages/shared/`, `infra/`)
+### Adarsh (P4): DevOps & Shared Infra (`packages/shared/`, `infra/`)
 - [ ] `TASK-P4-101`: Define Growth Engine Contracts & DTOs
   - **Inputs:** Data dictionary and schema specifications
   - **Outputs:** `packages/shared/contracts/growth-engine.ts`
@@ -64,7 +64,7 @@
   - **Outputs:** `infra/seed/data-generator.py`, updated `infra/docker-compose.yml`
   - **Validation:** Seeds 50+ stores, multi-SKU inventory, and 30-day beat history.
 
-### P5: Product & QA (`tests/`, `docs/`)
+### Shivam (P5): Product & QA (`tests/`, `docs/`)
 - [ ] `TASK-P5-101`: Leakage Detection Accuracy & Revenue Calculation Tests
   - **Inputs:** Synthetic edge cases (e.g., zero cover, idle distributor stock, 0% strike rate)
   - **Outputs:** `tests/integration/loss-engine.test.ts`
